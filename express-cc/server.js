@@ -1,8 +1,20 @@
-const express=require('express');
-const app=express();
+const express = require("express");
+const app = express();
+const path = require("path");
 
-const PORT=3000||process.env.PORT;
+const PORT = 3000 || process.env.PORT;
 
-app.listen(PORT,()=>{
-    console.log(`Server running on PORT ${PORT}`);
-})
+// set middleware
+app.use(express.static('public'));
+
+
+// app.get("/", (req, res) => {
+//   res.sendFile(path.resolve(__dirname) + "/index.html");
+// });
+// app.get("/about", (req, res) => {
+//   res.sendFile(path.resolve(__dirname) + "/about.html");
+// });
+
+app.listen(PORT, () => {
+  console.log(`Server running on PORT ${PORT}`);
+});
