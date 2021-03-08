@@ -15,6 +15,10 @@ app.use(express.static('public'));
 //   res.sendFile(path.resolve(__dirname) + "/about.html");
 // });
 
+app.get('/download',(req,res)=>{
+  res.download(path.resolve(__dirname) + '/download.html');
+})
+
 app.listen(PORT, () => {
   console.log(`Server running on PORT ${PORT}`);
 });
